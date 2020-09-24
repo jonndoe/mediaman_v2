@@ -3,6 +3,11 @@ import { Genre } from '../../shared/enums/genre.enum';
 import { Expose, Type } from 'class-transformer';
 
 export class Book extends Media {
+  private _author: string;
+
+  @Type(() => Number)
+  private _numberOfPages: number;
+
   constructor(
     name: string,
     description: string,
@@ -17,8 +22,6 @@ export class Book extends Media {
     this._author = author;
   }
 
-  private _author: string;
-
   @Expose()
   get author(): string {
     return this._author;
@@ -27,9 +30,6 @@ export class Book extends Media {
   set author(author: string) {
     this._author = author;
   }
-
-  @Type(() => Number)
-  private _numberOfPages: number;
 
   @Expose()
   get numberOfPages(): number {

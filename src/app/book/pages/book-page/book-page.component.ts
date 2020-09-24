@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import {Book} from "../../entities/book.entity";
-import {BookService} from "../../service/book.service";
 import {MediaCollection} from "../../../shared/entities/media-collection.entity";
+import {BookService} from "../../services/book.service";
+import {Book} from "../../entities/book.entity";
 
 @Component({
   selector: 'app-book-page',
   templateUrl: './book-page.component.html',
   styleUrls: ['./book-page.component.scss']
 })
-
-
 export class BookPageComponent implements OnInit {
 
   public formControl: FormControl;
